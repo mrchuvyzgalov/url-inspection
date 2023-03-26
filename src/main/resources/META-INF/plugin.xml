@@ -5,14 +5,22 @@
     <vendor>mrchuvyzgalov</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>com.intellij.java</depends>
 
     <resource-bundle>messages.MyBundle</resource-bundle>
 
     <extensions defaultExtensionNs="com.intellij">
-        <toolWindow factoryClass="com.github.mrchuvyzgalov.urlinspection.toolWindow.MyToolWindowFactory" id="MyToolWindow"/>
+        <localInspection language="JAVA"
+                         groupPath="Java"
+                         groupBundle="messages.InspectionsBundle"
+                         groupKey="group.names.probable.bugs"
+                         enabledByDefault="true"
+                         level="WARNING"
+                         displayName="HASH CODE 'URL' plugin"
+                         implementationClass="com.github.mrchuvyzgalov.urlinspection.UrlHashCodeInspection"/>
     </extensions>
 
     <applicationListeners>
-        <listener class="com.github.mrchuvyzgalov.urlinspection.listeners.MyFrameStateListener" topic="com.intellij.ide.FrameStateListener"/>
+
     </applicationListeners>
 </idea-plugin>
