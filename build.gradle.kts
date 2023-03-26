@@ -32,6 +32,10 @@ kotlin {
     jvmToolchain(11)
 }
 
+java {
+    sourceCompatibility = JavaVersion.VERSION_11
+}
+
 // Configure Gradle IntelliJ Plugin - read more: https://plugins.jetbrains.com/docs/intellij/tools-gradle-intellij-plugin.html
 intellij {
     pluginName.set(properties("pluginName"))
